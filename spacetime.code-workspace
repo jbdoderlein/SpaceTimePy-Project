@@ -13,6 +13,10 @@
                 "path": "spacetimepy-jupyterlab"
             },
             {
+                "name": "Pygame Extension",
+                "path": "spacetimepy-pygame"
+            },
+            {
                 "name": "Root",
                 "path": "."
             }

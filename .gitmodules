@@ -7,3 +7,6 @@
 [submodule "SpaceTimePy"]
 	path = SpaceTimePy
 	url = https://github.com/jbdoderlein/SpaceTimePy
+[submodule "spacetimepy-pygame"]
+	path = spacetimepy-pygame
+	url = https://github.com/jbdoderlein/spacetimepy-pygame

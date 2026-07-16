@@ -1,0 +1,17 @@
+[project]
+name = "spacetimepy-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "spacetimepy",
+    "spacetimepy-jupyterlab",
+    "spacetimepy-pygame",
+]
+
+
+[tool.uv.sources]
+spacetimepy = { path = "./SpaceTimePy", editable = true }
+spacetimepy-jupyterlab = { path = "./spacetimepy-jupyterlab", editable = true }
+spacetimepy-pygame = { path = "./spacetimepy-pygame", editable = true }
