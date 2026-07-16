@@ -1,0 +1,20 @@
+{
+    "folders": [
+            {
+                "name": "Core Library",
+                "path": "SpaceTimePy"
+            },
+            {
+                "name": "VSCode Extension",
+                "path": "spacetimepy-vscode"
+            },
+            {
+                "name": "JupyterLab Extension",
+                "path": "spacetimepy-jupyterlab"
+            },
+            {
+                "name": "Root",
+                "path": "."
+            }
+        ],
+}

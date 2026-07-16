@@ -1,0 +1,9 @@
+[submodule "spacetimepy-jupyterlab"]
+	path = spacetimepy-jupyterlab
+	url = https://github.com/jbdoderlein/spacetimepy-jupyterlab
+[submodule "spacetimepy-vscode"]
+	path = spacetimepy-vscode
+	url = https://github.com/jbdoderlein/spacetimepy-vscode
+[submodule "SpaceTimePy"]
+	path = SpaceTimePy
+	url = https://github.com/jbdoderlein/SpaceTimePy
