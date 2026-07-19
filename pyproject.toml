@@ -16,4 +16,4 @@ dependencies = [
 spacetimepy = { path = "./SpaceTimePy", editable = true }
 spacetimepy-jupyterlab = { path = "./spacetimepy-jupyterlab", editable = true }
 spacetimepy-pygame = { path = "./spacetimepy-pygame", editable = true }
-sampling-mining-workflows-dsl = { git = "https://github.com/jbdoderlein/SamplingMiningWorkflowDSL" }
+sampling-mining-workflows-dsl = { path = "./SamplingMiningWorkflowDSL", editable = true }

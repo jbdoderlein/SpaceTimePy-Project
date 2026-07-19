@@ -17,6 +17,10 @@
                 "path": "spacetimepy-pygame"
             },
             {
+                "name": "Workflow DSL",
+                "path": "SamplingMiningWorkflowDSL"
+            },
+            {
                 "name": "Root",
                 "path": "."
             }

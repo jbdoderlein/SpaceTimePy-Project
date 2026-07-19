@@ -10,3 +10,6 @@
 [submodule "spacetimepy-pygame"]
 	path = spacetimepy-pygame
 	url = https://github.com/jbdoderlein/spacetimepy-pygame
+[submodule "SamplingMiningWorkflowDSL"]
+	path = SamplingMiningWorkflowDSL
+	url = https://github.com/jbdoderlein/SamplingMiningWorkflowDSL

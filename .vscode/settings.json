@@ -3,6 +3,7 @@
     "SpaceTimePy": true,
     "spacetimepy-vscode": true,
     "spacetimepy-jupyterlab": true,
-    "spacetimepy-pygame": true
+    "spacetimepy-pygame": true,
+    "SamplingMiningWorkflowDSL": true
   }
 }

@@ -1,8 +1,7 @@
-import base64
-import io
 import random
+
 import pygame
-from spacetimepy_pygame import launch_game_loop, game_loop
+from spacetimepy_pygame import game_loop, get_events, launch_game_loop
 
 # Initialize pygame
 pygame.init()
@@ -84,15 +83,7 @@ def reset_game():
     GAME_ACTIVE = True
     SCORE = 0
 
-def get_events():
-    return pygame.event.get()
-
-def save_screen(m,c,o,r):
-    buffer = io.BytesIO()
-    pygame.image.save(pygame.display.get_surface(), buffer, "PNG")
-    return {"image": base64.encodebytes(buffer.getvalue()).decode('utf-8')}
-
-@game_loop(track=[get_events,random.randint])
+@game_loop()
 def display_game():
     global GAME_ACTIVE, BIRD_MOVEMENT, pipes
     for event in get_events():
@@ -101,7 +92,7 @@ def display_game():
         
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_SPACE and GAME_ACTIVE:
-                BIRD_MOVEMENT = -9
+                BIRD_MOVEMENT = -8
             
             if event.key == pygame.K_SPACE and not GAME_ACTIVE:
                 reset_game()
@@ -111,7 +102,7 @@ def display_game():
     
     if GAME_ACTIVE:
         # Bird movement
-        BIRD_MOVEMENT += 0.55 # Gravity
+        BIRD_MOVEMENT += 0.50 # Gravity
         bird_rect.y = int(bird_rect.y + BIRD_MOVEMENT)
         
         # Draw bird
