@@ -1,5 +1,6 @@
 import spacetimepy
 
+@spacetimepy.line()
 def binary_search(arr, target):
     low = 0
     high = len(arr) - 2 # obvious bug here
@@ -16,6 +17,8 @@ def binary_search(arr, target):
 if __name__ == "__main__":
     arr = [1, 2, 3, 4, 5]
     target = 5
-    result = binary_search(arr, target)
+    stp = spacetimepy.SpaceTime.open(".vscode/spacetimepy.db")
+    with stp.capture.recording():
+        result = binary_search(arr, target)
     print(result)  # Expected output: 4
     

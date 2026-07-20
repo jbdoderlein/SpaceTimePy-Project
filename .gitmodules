@@ -10,3 +10,6 @@
 [submodule "SamplingMiningWorkflowDSL"]
 	path = SamplingMiningWorkflowDSL
 	url = https://github.com/jbdoderlein/SamplingMiningWorkflowDSL
+[submodule "spacetimepy-vscode"]
+	path = spacetimepy-vscode
+	url = https://github.com/jbdoderlein/spacetimepy-vscode
