@@ -5,8 +5,8 @@ A repo combining all SpaceTimePy related repo with VSCode configuration.
 ## Install
 
 ```bash
-git clone ...
-cd ...
+git clone https://github.com/jbdoderlein/SpaceTimePy-Project
+cd SpaceTimePy-Project
 uv venv
 uv sync
 source .venv/bin/activate
