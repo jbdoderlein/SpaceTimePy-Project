@@ -54,3 +54,9 @@ First start the vscode with extension inside
 Then open the file `demo/binary_search.py`
 
 ![Screenshot](img/vscode.png)
+
+You can additionaly see the trace web explorer by launching : 
+
+```bash
+web-spacetimepy .vscode/spacetimepy.db --port 8001
+```
