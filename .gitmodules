@@ -13,3 +13,6 @@
 [submodule "spacetimepy-vscode"]
 	path = spacetimepy-vscode
 	url = https://github.com/jbdoderlein/spacetimepy-vscode
+[submodule "spacetimepy-performance"]
+	path = spacetimepy-performance
+	url = https://github.com/jbdoderlein/spacetimepy-performance

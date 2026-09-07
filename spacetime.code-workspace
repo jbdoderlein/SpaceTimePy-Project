@@ -21,6 +21,10 @@
                 "path": "SamplingMiningWorkflowDSL"
             },
             {
+                "name": "Performance Benchmarking",
+                "path": "spacetimepy-performance"
+            },
+            {
                 "name": "Root",
                 "path": "."
             }
