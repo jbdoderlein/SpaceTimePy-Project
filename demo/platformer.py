@@ -16,7 +16,7 @@ SCREEN_HEIGHT = 600
 FRAME_RATE = 60
 PLAYER_SPEED = 6
 JUMP_VELOCITY = -15
-GRAVITY = 1.2
+GRAVITY = 1
 MAX_FALL_SPEED = 16
 
 SKY = (135, 206, 235)
@@ -37,9 +37,9 @@ clock = pygame.time.Clock()
 PLATFORMS = (
     pygame.Rect(0, 560, 900, 40),
     pygame.Rect(150, 480, 170, 22),
-    #pygame.Rect(380, 400, 170, 22),
+    pygame.Rect(380, 400, 170, 22),
     pygame.Rect(620, 320, 170, 22),
-    #pygame.Rect(400, 240, 170, 22),
+    pygame.Rect(400, 240, 170, 22),
     pygame.Rect(170, 160, 170, 22),
     pygame.Rect(20, 80, 120, 22),
 )
