@@ -41,7 +41,7 @@ jupyter-lab demo/workflow.ipynb
 
 Open `workflow.ipynb` in JupyterLab. Execute the setup cells and the workflow cell.
 The SpaceTime side panel opens after `execute_live_workflow()`.
-Edit an existing operator argument to create a branch from its execution checkpoint.
+Edit an existing operator argument. Save the notebook to create a branch from its execution checkpoint.
 Select a recorded branch to restore its source and results without execution.
 Keep the input context, operator count, and operator order fixed.
 

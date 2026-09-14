@@ -25,9 +25,11 @@ The tests also check these results:
 - A later valid edit succeeds after a failed execution.
 - Ordinary workflow execution does not create a live recording.
 
-Four Python tests passed, including a test in a real IPython kernel.
+Five Python tests passed, including a test in a real IPython kernel.
 The kernel test checks the MIME signal, source attachment, child replay, stage size, and branch connection.
-Four TypeScript tests passed. These tests check branch restoration without kernel execution, request ordering, stale responses, invalid-source handling, and restart cleanup.
+Five TypeScript tests passed. These tests check branch restoration without kernel execution, request ordering, stale responses, invalid-source handling, and restart cleanup.
+The save-triggered tests also check typing without a save, failed saves, and edits made during a save.
+Consecutive filter edits include an empty branch that writes `[]` and a later branch with non-empty output.
 The extension build passed.
 
 The visual JupyterLab interaction check remains incomplete.
