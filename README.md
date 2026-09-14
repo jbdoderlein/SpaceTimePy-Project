@@ -39,7 +39,11 @@ First start the jupyter-lab server
 jupyter-lab demo/workflow.ipynb
 ```
 
-In web interface open `workflow.ipynb` and execute all cell. A side windows should open with variant graph, and some variant should be already present in the workflow code cell.
+Open `workflow.ipynb` in JupyterLab. Execute the setup cells and the workflow cell.
+The SpaceTime side panel opens after `execute_live_workflow()`.
+Edit an existing operator argument to create a branch from its execution checkpoint.
+Select a recorded branch to restore its source and results without execution.
+Keep the input context, operator count, and operator order fixed.
 
 ![Screenshot](img/workflow.png)
 
