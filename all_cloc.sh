@@ -83,23 +83,32 @@ count_files "Pygame — visualization/UI" \
 
 # Notebook + sampling workflow
 #
-# The two SamplingMiningWorkflowDSL files are the domain-side SpaceTime
-# adaptation introduced for recording/replaying workflows. Jupyter kernel
-# templates and combination logic form the notebook-to-SpaceTime bridge.
-# generated/kernel-sources.ts is deliberately excluded because it is generated
-# from the Python templates below and would count the same implementation twice.
+# Count Python additions against the last DSL commit before SpaceTime integration.
+# Include changes in existing modules and tracked working-tree edits.
+# Count added lines, including replacement lines. Do not subtract deleted lines.
+# Exclude the generated TypeScript copy of the Python kernel sources.
+DSL_BASELINE="bde8b2bd7d068588bf913f6c6eff0c614f338bcd"
+DSL_ADDED_DIR="$(mktemp -d)"
+trap 'rm -rf -- "$DSL_ADDED_DIR"' EXIT
+git -C "$PROJECT_ROOT/SamplingMiningWorkflowDSL" diff \
+    --no-ext-diff --no-textconv --no-color --unified=0 \
+    "$DSL_BASELINE" -- 'src/**/*.py' |
+    awk '
+        /^diff --git / { print ""; next }
+        /^\+\+\+ / { next }
+        /^\+/ { print substr($0, 2) }
+    ' > "$DSL_ADDED_DIR/dsl-added.py"
+
 count_files "Notebook + sampling — SpaceTime adaptation" \
-    "$PROJECT_ROOT/SamplingMiningWorkflowDSL/src/sampling_mining_workflows_dsl/SpaceTimeWorkflowBuilder.py" \
-    "$PROJECT_ROOT/SamplingMiningWorkflowDSL/src/sampling_mining_workflows_dsl/operator/SpaceTimeOperatorBuilder.py" \
+    "$DSL_ADDED_DIR/dsl-added.py" \
     "$PROJECT_ROOT/spacetimepy-jupyterlab/spacetimepy_jupyterlab/__init__.py" \
-    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/combinations.ts" \
-    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel-code.ts" \
-    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel/finish-workflow-recording.py" \
-    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel/reexecute-variant.py" \
+    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel/live-source.py" \
+    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel/live-workflow.py" \
     "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel/trace-query.py" \
     "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel/workflow-summary.py"
 
 count_files "Notebook + sampling — visualization/UI" \
+    "$PROJECT_ROOT/spacetimepy-jupyterlab/src/kernel-code.ts" \
     "$PROJECT_ROOT/spacetimepy-jupyterlab/src/index.ts" \
     "$PROJECT_ROOT/spacetimepy-jupyterlab/src/trace-tree.ts" \
     "$PROJECT_ROOT/spacetimepy-jupyterlab/src/trace-view.ts" \
@@ -154,7 +163,12 @@ section "Counting policy"
 cat <<'EOF'
 Production source only. Tests, documentation, dependency lockfiles, compiled
 output, vendored dependencies, and generated duplicate sources are excluded.
-Each application source file appears in exactly one category. The final summary
+Notebook adaptation counts Python lines added to the DSL since commit
+bde8b2bd7d068588bf913f6c6eff0c614f338bcd, plus the extension's Python source.
+The DSL count includes added replacement lines and tracked working-tree edits.
+It excludes deleted lines and untracked files. It is not a net line-count change.
+All production TypeScript in the notebook extension counts as visualization/UI.
+The other application counts use complete files, each in one category. The final summary
 counts only Python, TypeScript, and JavaScript; detailed sections still show
 every language detected by cloc.
 EOF
